@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
+import './login.css'
 // import StaticNavBar from "./StaticNavBar";
 
 function Signup() {
@@ -17,57 +18,55 @@ function Signup() {
   };
 
   return (
-    <>
+    <div className="wrapper2">
       {/* <StaticNavBar /> */}
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           <Form onSubmit={handleSubmit}>
-            <Form.Group id="name">
-              <Form.Label>Name</Form.Label>
-              <Form.Control type="text" required></Form.Control>
+            <Form.Group id="name" className="formgroup">
+              <Form.Label>Name: </Form.Label>
+              <Form.Control type="text" className="input" required></Form.Control>
             </Form.Group>
-            <Form.Group>
-              <Form.Label>Address</Form.Label>
+            <Form.Group className="formgroup">
+              <Form.Label>Address: </Form.Label>
               <Form.Control
                 type="text"
+                className="input"
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group>
-              <Form.Label>Role</Form.Label>
-              <Form.Control onChange={(e) => setRole(e.target.value)} as="select" value={role}>
+            <Form.Group className="formgroup">
+              <Form.Label>Role: </Form.Label>
+              <Form.Control onChange={(e) => setRole(e.target.value)} as="select" value={role} className="input">
                 <option value="">--Select--</option>
                 <option value="Manufacturer">Manufacturer</option>
                 <option value="Retailer">Retailer</option>
                 <option value="Customer">Customer</option>
               </Form.Control>
+            </Form.Group >
+            <Form.Group id="email" className="formgroup">
+              <Form.Label >Email: </Form.Label>
+              <Form.Control type="email" className="input" required></Form.Control>
             </Form.Group>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" required></Form.Control>
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+            <Form.Group id="password" className="formgroup">
+              <Form.Label>Password: </Form.Label>
               <Form.Control
                 type="password"
+                className="input"
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group id="password-confirm">
+            <Form.Group id="password-confirm" className="formgroup">
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
                 type="password"
+                className="input"
                 required
               ></Form.Control>
             </Form.Group>
             <Button
-              style={{
-                width: "15rem",
-                maxWidth: "15rem",
-                backgroundColor: "blueviolet",
-                color: "white",
-              }}
+              className="button"
               type="submit"
             >
               Sign Up
@@ -80,7 +79,7 @@ function Signup() {
           </div>
         </Card.Footer>
       </Card>
-    </>
+    </div>
   );
 }
   
