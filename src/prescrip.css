@@ -44,3 +44,7 @@ button:hover {
     margin: 20px auto;
     padding: 5px;
 }
+
+table {
+    border: 1px solid white;
+}

@@ -7,6 +7,7 @@ function Prescrip() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [recognizedText, setRecognizedText] = useState('');
   const [isShown, setIsShown] = useState(false);
+  const [isShowPharm, setIsShowPharm] = useState(false);
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -35,6 +36,10 @@ function Prescrip() {
     }
   }
 
+  const NearbyPharmacies = () => {
+    setIsShowPharm(true);
+  }
+
   return (
     <div className='wrapper'>
       <h1>Find your medicines</h1>
@@ -52,7 +57,31 @@ function Prescrip() {
       </div>
       )}
       
-      {/* <button onClick={NearbyPharmacies}>Find</button> */}
+      <button onClick={NearbyPharmacies}>Find</button>
+      {
+        isShowPharm && (
+            <div>
+                <table>
+                    <tr>
+                        <th>Pharmacy</th>
+                        <th>Pincode</th>
+                    </tr>
+                    <tr>
+                        <th>Pharmacy name</th>
+                        <th>600078</th>
+                    </tr>
+                    <tr>
+                        <th>Pharmacy name</th>
+                        <th>600078</th>
+                    </tr>
+                    <tr>
+                        <th>Pharmacy name</th>
+                        <th>600078</th>
+                    </tr>
+                </table>
+            </div>
+        )
+      }
     </div>
   );
 }
