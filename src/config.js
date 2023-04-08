@@ -1,4 +1,4 @@
-export const TODO_LIST_ADDRESS = '0xC1078B7811664A19790448d0a9C835Bb77a9E6e3'
+export const TODO_LIST_ADDRESS = '0xE322F72A7e272A6b486eA967FcD90845d6fFD023'
 
 export const TODO_LIST_ABI = 
 [
@@ -53,6 +53,20 @@ export const TODO_LIST_ABI =
 		"type": "function"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "getId",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -70,6 +84,10 @@ export const TODO_LIST_ABI =
 			{
 				"name": "_manuDate",
 				"type": "string"
+			},
+			{
+				"name": "_manuName",
+				"type": "string"
 			}
 		],
 		"name": "newMed",
@@ -81,20 +99,6 @@ export const TODO_LIST_ABI =
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getId",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	}
 ]

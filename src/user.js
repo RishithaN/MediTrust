@@ -4,6 +4,9 @@ import Web3 from 'web3';
 import { TODO_LIST_ABI, TODO_LIST_ADDRESS } from './config';
 
 
+import Prescrip from "./prescrip";
+
+
 const User = () => {
 
     const [isPres, setIsPres] = useState(false);
@@ -111,7 +114,7 @@ const handleSubmit = async e => {
 
                 {/* Prescription */}
 
-                <h1>Prescription</h1>
+                <Prescrip/>
 
 
             </div>

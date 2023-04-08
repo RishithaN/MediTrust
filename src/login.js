@@ -1,36 +1,59 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { Navbar } from "react-bootstrap";
 import './login.css'
 
 
-// const StaticNavBar = () => {
-//   return (
-//     <>
-//       <Navbar
-//         sticky="top"
-//         expand="lg"
-//         style={{ backgroundColor: "rgb(93, 7, 173)" }}
-//       >
-//         <Navbar.Brand>
-//           <Link to="/" className="mr-lg-4" style={{ color: "black" }}>
-//             MediTrust
-//           </Link>
-//         </Navbar.Brand>
-//       </Navbar>
-//     </>
-//   );
-// }
+
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const navigate = useNavigate();
   
     const handleSubmit = (event) => {
       event.preventDefault();
       // handle login
+
+      alert(password);
+
+      fetch('http://localhost:3000/login', {
+            method: 'POST',
+            // redirect: 'manual',
+            body: JSON.stringify({e : email , pwd : password}),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+        })
+        .then((res) => res.json())
+        .then((data) => {
+         
+
+      if(data.sending === "success" && data.role === 3){
+        navigate('/user')
+      }
+
+      else if(data.sending === "success" && (data.role === 1)){
+        navigate('/manufacturer')
+      }
+
+      else if(data.sending === "success" && data.role === 2){
+        navigate('/retailer')
+      }
+
+      else {
+        navigate('/home')
+      }
+          
+
+        })
+
+
+
     };
 
   return (
@@ -39,10 +62,10 @@ function Login() {
       <div className="card">
         <Card.Body>
           <h1 className="text-center mb-4">Login</h1>
-          <Form onSubmit={"handleSubmit"}>
+          <Form onSubmit={handleSubmit}>
             <Form.Group id="email" className="formgroup">
               <Form.Label>Email: </Form.Label>
-              <Form.Control type="email" className="input" required></Form.Control>
+              <Form.Control type="email" className="input" required onChange={(e) => setEmail(e.target.value)}></Form.Control>
             </Form.Group> 
             <Form.Group id="password" className="formgroup">
               <Form.Label>Password: </Form.Label>
@@ -50,6 +73,7 @@ function Login() {
                 type="password"
                 className="input"
                 required
+                onChange={(e) => setPassword(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Button

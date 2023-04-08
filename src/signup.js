@@ -2,20 +2,57 @@ import React, { useRef, useEffect, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import './login.css'
+import { useNavigate } from "react-router-dom";
 // import StaticNavBar from "./StaticNavBar";
 
 function Signup() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [address, setAddress] = useState('');
+  const [mobile, setMobile] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmpassword, setConfirmPassword] = useState('');
+  //const [confirmpassword, setConfirmPassword] = useState('');
   const [role, setRole] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // handle signup logic
-  };
+
+        fetch('http://localhost:3000/signup', {
+          method: 'POST',
+          // redirect: 'manual',
+          body: JSON.stringify({email : email , password : password , mobile : mobile , role : role , name : name}),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+      })
+      .then((res) => res.json())
+      .then((data) => {
+
+
+        alert(data.sending)
+        alert(data.role)
+
+      if(data.sending === "success" && data.role === 3){
+        navigate('/user')
+      }
+
+      else if(data.sending === "success" && data.role === 1){
+        navigate('/manufacturer')
+      }
+
+      else if(data.sending === "success" && data.role === 2){
+        navigate('/retailer')
+      }
+
+      else {
+        navigate('/home')
+      }
+
+      });
+
+}
 
   return (
     <div className="wrapper2">
@@ -26,28 +63,29 @@ function Signup() {
           <Form onSubmit={handleSubmit}>
             <Form.Group id="name" className="formgroup">
               <Form.Label>Name: </Form.Label>
-              <Form.Control type="text" className="input" required></Form.Control>
+              <Form.Control type="text" className="input" required onChange={(e) => setName(e.target.value)}></Form.Control>
             </Form.Group>
             <Form.Group className="formgroup">
-              <Form.Label>Address: </Form.Label>
+              <Form.Label>Mobile Number: </Form.Label>
               <Form.Control
-                type="text"
+                type="number"
                 className="input"
                 required
+                onChange={(e) => setMobile(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group className="formgroup">
               <Form.Label>Role: </Form.Label>
               <Form.Control onChange={(e) => setRole(e.target.value)} as="select" value={role} className="input">
                 <option value="">--Select--</option>
-                <option value="Manufacturer">Manufacturer</option>
-                <option value="Retailer">Retailer</option>
-                <option value="Customer">Customer</option>
+                <option value="1">Manufacturer</option>
+                <option value="2">Retailer</option>
+                <option value="3">Customer</option>
               </Form.Control>
             </Form.Group >
             <Form.Group id="email" className="formgroup">
               <Form.Label >Email: </Form.Label>
-              <Form.Control type="email" className="input" required></Form.Control>
+              <Form.Control type="email" className="input" required onChange={(e) => setEmail(e.target.value)}></Form.Control>
             </Form.Group>
             <Form.Group id="password" className="formgroup">
               <Form.Label>Password: </Form.Label>
@@ -55,6 +93,7 @@ function Signup() {
                 type="password"
                 className="input"
                 required
+                onChange={(e) => setPassword(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group id="password-confirm" className="formgroup">
