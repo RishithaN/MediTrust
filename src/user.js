@@ -159,7 +159,7 @@ const handleSubmit = async e => {
 
            {isShow && (
             <>
-            <h1 className='heading' style="text-align:center">TRACK MEDICINE</h1>
+            <h1 className='heading' style={{ textAlign:"center"}}>TRACK MEDICINE</h1>
             <div className="timeline">
                 <ul>
                     <li>
@@ -195,8 +195,6 @@ const handleSubmit = async e => {
 
             {/* Doctors */}
 
-            <h1>Doctors</h1>
-
             <br></br>
 
             <div>
@@ -215,14 +213,17 @@ const handleSubmit = async e => {
 
                 {
                                     docArray.map((row) =>
-                                    <ul style={{listStyleType: "none"}}>
-                                        <img src= "//www.jquery-az.com/html/images/banana.jpg" alt="doc"></img>
+                               
+                                    <ul style={{listStyleType: "none" , textAlign:"center" , margin:"15px"}}>
+                                        <img src= "http://placehold.it/120x120&text=image4" alt="doc" style={{padding: 5, display: 'inline-block' , width:"150px" , height:"150px"}}></img>
+                                        <div style={{padding: 10, display: 'inline-block'}}>
                                           <li><b><u>Name: {row.name}</u></b></li>
                                           <li>Experience: {row.experience}</li>
-                                          <li>Specialization: {row.specilization}</li>
+                                          <li>Specialization: {row.specialization}</li>
                                           <li>Mobile: {row.mobile}</li>
                                           <li>Email: {row.email}</li>
 
+                                          </div>
                                           <br/>
 
                                   </ul>
@@ -238,7 +239,6 @@ const handleSubmit = async e => {
         </div>
 
         )}
-
 
 
  </div>

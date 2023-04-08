@@ -111,7 +111,7 @@ const handleSubmit = async e => {
             </div>
             
             <div>
-              <label>Date</label>
+              <label>Mfd date:</label>
               <input type='text' onChange={handleDate}></input>
             </div>
           
@@ -122,7 +122,7 @@ const handleSubmit = async e => {
             </div>
 
             <div>
-              <label>Manufacturer Name :</label> 
+              <label>Mfd Name :</label> 
               <input type='text' onChange={handleMan}></input>
             </div>
 

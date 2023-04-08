@@ -46,11 +46,14 @@ contract medicineSupply
     }
     function addRetailer(uint256 _medId,string memory _date,string memory _loc,string memory _name) public returns(string memory)
     {
-        string memory description=" DATE: ";
+        //string memory description=" DATE: ";
+        string memory description="";
         description=concatenate(description,_date);
-        string memory location="  LOCATION: ";
-        description=concatenate(description,location);
+        description=concatenate(description,"\n");
+        //string memory location="  LOCATION: ";
+        //description=concatenate(description,location);
         description=concatenate(description,_loc);
+        description=concatenate(description,"\n");
         retailer memory newRetail=retailer({retailerId:msg.sender,medDesc:description,name:_name});
         medProd[_medId].delivery[medProd[_medId].numRetail]=newRetail;
         medProd[_medId].numRetail++;
@@ -58,22 +61,30 @@ contract medicineSupply
     }
     function medInfo(uint256 _medId) view public returns(string memory)
     {
-        string memory info="Medicine name: ";
+        //string memory info="Medicine name: ";
+        string memory info="";
+        info=concatenate(info,"\n");
         info=concatenate(info,medProd[_medId].medName);
-        info=concatenate(info,"  MRP: ");
+        info=concatenate(info,"\n");
         info=concatenate(info,medProd[_medId].mrp);
-        info=concatenate(info," Manufacture Name: ");
+        info=concatenate(info,"\n");
+        //info=concatenate(info," Manufacture Name: ");
         info=concatenate(info,medProd[_medId].manuName);
-        info=concatenate(info," Manufacture Date: ");
+        info=concatenate(info,"\n");
+        //info=concatenate(info," Manufacture Date: ");
         info=concatenate(info,medProd[_medId].manuDate);
-        info=concatenate(info,"  Expiry: ");
+        info=concatenate(info,"\n");
+        //info=concatenate(info,"  Expiry: ");
         info=concatenate(info,medProd[_medId].expiry);
+        info=concatenate(info,"\n");
 
         for(uint256 i=0;i<medProd[_medId].numRetail;i++)
         {
-            info=concatenate(info,"  Retailer: ");
+            //info=concatenate(info,"  Retailer: ");
             info=concatenate(info,medProd[_medId].delivery[i].name);
+            info=concatenate(info,"\n");
             info=concatenate(info,medProd[_medId].delivery[i].medDesc);
+            info=concatenate(info,"\n");
         }
         return info;
     }   

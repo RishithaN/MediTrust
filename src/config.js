@@ -1,26 +1,7 @@
-export const TODO_LIST_ADDRESS = '0xCfe3781b51e10563c290EB034a02f6E7B49F700f'
+export const TODO_LIST_ADDRESS = '0x104850a5E601Ff390f1D0ec99770D4eAC744495B'
 
 export const TODO_LIST_ABI = 
 [
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_medId",
-				"type": "uint256"
-			}
-		],
-		"name": "medInfo",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
 	{
 		"constant": false,
 		"inputs": [
@@ -50,20 +31,6 @@ export const TODO_LIST_ABI =
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getId",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -99,6 +66,39 @@ export const TODO_LIST_ABI =
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getId",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_medId",
+				"type": "uint256"
+			}
+		],
+		"name": "medInfo",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	}
 ]
