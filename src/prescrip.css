@@ -1,13 +1,20 @@
 .wrapper {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.uploadbox{
     text-align: center;
+    padding-left: 30px;
 }
 
 .piccon {
-    background-color: #ffffff34;
-    width: 50%;
+    /* background-color: #ffffff34; */
+    width: 100%;
     border-radius: 10px;
-    margin: 20px auto;
+    margin: auto;
     padding: 30px 20px;
+    
 }
 
 p {
@@ -22,7 +29,7 @@ p {
     text-align: center;
     display: block;
 }
-button {
+.button {
     font-size: 1.2rem;
     padding: 8px 20px;
     border-radius: 5px;
@@ -46,5 +53,11 @@ button:hover {
 }
 
 table {
-    border: 1px solid white;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 1.2rem;;
+}
+th,tr{
+    border: 1px solid rgb(0, 0, 0);
 }

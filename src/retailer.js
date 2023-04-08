@@ -105,26 +105,25 @@ const handleSubmit = async e => {
         <h1>Purchase Medicine</h1>
         <form onSubmit={handleSubmit}>
 
-            Medicine ID : 
-            <input type='number' onChange={handleId}></input>
+            <div>
+              <label>Medicine ID :</label>
+              <input type='number' onChange={handleId}></input>
+            </div>
 
-            <br/>
+            <div>
+              <label>Retailer Name :</label>
+              <input type='text' onChange={handleName}></input>
+            </div>
 
-            Retailer Name : 
-            <input type='text' onChange={handleName}></input>
-
-            <br/>
-
-            Date :
+          <div>
+            <label>Date :</label>
             <input type='text' onChange={handleDate}></input>
-
-            <br/>
-
-            Location : 
+          </div>
+            
+          <div>
+            <label>Location :</label> 
             <input type='text' onChange={handleLoc}></input>
-
-            <br/>
-            <br/>
+          </div>
 
             <Button
               className="button"

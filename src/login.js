@@ -64,11 +64,11 @@ function Login() {
           <h1 className="text-center mb-4">Login</h1>
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email" className="formgroup">
-              <Form.Label>Email: </Form.Label>
+              <Form.Label className="label">Email: </Form.Label>
               <Form.Control type="email" className="input" required onChange={(e) => setEmail(e.target.value)}></Form.Control>
             </Form.Group> 
             <Form.Group id="password" className="formgroup">
-              <Form.Label>Password: </Form.Label>
+              <Form.Label className="label">Password: </Form.Label>
               <Form.Control
                 type="password"
                 className="input"
@@ -86,11 +86,12 @@ function Login() {
           <div className="w-100 text-center mt-3">
             <Link to="/forgot-password">Forgot Password ?</Link>
           </div>
+          <div className="w-100 text-center mt-2 text-danger">
+            Need an account ? <Link to="/signup">Sign Up</Link>
+          </div>
         </Card.Body>
       </div>
-      <div className="w-100 text-center mt-2 text-danger">
-        Need an account ? <Link to="/signup">Sign Up</Link>
-      </div>
+      
     </div>
   );
   };

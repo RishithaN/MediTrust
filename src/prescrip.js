@@ -50,7 +50,7 @@ function Prescrip() {
         <div className='uploadbox'>
             <input type="file" onChange={handleFileChange} />
         </div>
-        <button onClick={handleRecognizeClick}>Get Medicines</button>
+        <button onClick={handleRecognizeClick} className='button' style={{width:20+'rem'}}>Get Medicines</button>
       </div>
        {isShown && (
         <div className='medbox'>
@@ -59,7 +59,7 @@ function Prescrip() {
       </div>
       )}
       
-      <button onClick={NearbyPharmacies}>Find</button>
+      <button onClick={NearbyPharmacies} className='button'>Find</button>
       {
         isShowPharm && (
             <div>

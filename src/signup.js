@@ -57,16 +57,16 @@ function Signup() {
   return (
     <div className="wrapper2">
       {/* <StaticNavBar /> */}
-      <Card>
+      <Card className="signup">
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           <Form onSubmit={handleSubmit}>
             <Form.Group id="name" className="formgroup">
-              <Form.Label>Name: </Form.Label>
+              <Form.Label className="label">Name: </Form.Label>
               <Form.Control type="text" className="input" required onChange={(e) => setName(e.target.value)}></Form.Control>
             </Form.Group>
             <Form.Group className="formgroup">
-              <Form.Label>Mobile Number: </Form.Label>
+              <Form.Label className="label">Mobile Number: </Form.Label>
               <Form.Control
                 type="number"
                 className="input"
@@ -75,7 +75,7 @@ function Signup() {
               ></Form.Control>
             </Form.Group>
             <Form.Group className="formgroup">
-              <Form.Label>Role: </Form.Label>
+              <Form.Label className="label">Role: </Form.Label>
               <Form.Control onChange={(e) => setRole(e.target.value)} as="select" value={role} className="input">
                 <option value="">--Select--</option>
                 <option value="1">Manufacturer</option>
@@ -84,11 +84,11 @@ function Signup() {
               </Form.Control>
             </Form.Group >
             <Form.Group id="email" className="formgroup">
-              <Form.Label >Email: </Form.Label>
+              <Form.Label className="label">Email: </Form.Label>
               <Form.Control type="email" className="input" required onChange={(e) => setEmail(e.target.value)}></Form.Control>
             </Form.Group>
             <Form.Group id="password" className="formgroup">
-              <Form.Label>Password: </Form.Label>
+              <Form.Label className="label">Password: </Form.Label>
               <Form.Control
                 type="password"
                 className="input"
@@ -97,7 +97,7 @@ function Signup() {
               ></Form.Control>
             </Form.Group>
             <Form.Group id="password-confirm" className="formgroup">
-              <Form.Label>Confirm Password</Form.Label>
+              <Form.Label className="label">Confirm Password</Form.Label>
               <Form.Control
                 type="password"
                 className="input"

@@ -1,3 +1,14 @@
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+
+label {
+    font-size: 1.3rem;
+}
 .timeline {
     margin-bottom: 30px;
 }

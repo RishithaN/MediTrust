@@ -110,10 +110,12 @@ const handleSubmit = async e => {
 
   return (
     <div>
-
-        <h1 onClick={handlePres}>Prescription</h1>
-        <h1 onClick={handleMedi}>Medicine details</h1>
-        <h1 onClick={handleDoc}>Doctors</h1>
+        <div className="options">
+            <h1 onClick={handlePres}>Prescription</h1>
+            <h1 onClick={handleMedi}>Medicine details</h1>
+            <h1 onClick={handleDoc}>Doctors</h1>
+        </div>
+        
 
 
         {isPres && (
@@ -142,13 +144,13 @@ const handleSubmit = async e => {
 
             
 
-            enter medicine ID : 
+            <label>Enter medicine ID : </label>
             <input type='number' onChange={handleMedid}></input>
 
             <br/>
             <br/>
 
-            <input type='submit'></input>
+            <input type='submit' className="button"></input>
 
 
         </form>

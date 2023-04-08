@@ -1,39 +1,81 @@
 .wrapper {
+    /* background: radial-gradient(ellipse at top, #38ef7e84, transparent), radial-gradient(ellipse at bottom, #11998e75, transparent); */
     background-color: #ffffff34;
+    box-shadow: 5px 5px 10px 5px rgba(255, 255, 255, 0.521);
     width: 50%;
     border-radius: 10px;
     margin: auto;
     margin-top: 80px;
     padding: 30px 20px;
+    text-align: center;
 }
 
 .wrapper2 {
     background-color: #ffffff34;
+    box-shadow: 5px 5px 10px 5px rgba(255, 255, 255, 0.521);
     width: 50%;
     border-radius: 10px;
     margin: auto;
     margin-top: 20px;
     padding: 30px 20px;
     text-align: center;
+    margin-bottom: 30px;
 }
 .wrapper2 h2{
     margin-top: 0;
 }
 
 .formgroup {
-    margin-bottom: 20px;
+    margin: auto;
+    margin-bottom: 30px;
     font-size: 1.2rem;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+
 }
 
 .input {
-    padding: 8px;
-    margin-left: 5px;
+    padding: 10px 8px;
+    border: 0;
+    border-radius: 5px;
+    flex-basis: 70%;
+}
+.label {
+    width: 20%;
+    text-align: right;
 }
 
+
 .button {
-    width: 15rem;
-    max-width: 15rem;
-    background-color: blueviolet ;
-    color: white;
+    background-image: linear-gradient(to right, #134E5E 0%, #71B280 51%, #134E5E 100%);
+    margin: auto;
+    width:15rem;
     margin-bottom: 15px;
+    margin-top: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+
+.button:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.card {
+    margin-bottom: 10px;
+}
+
+.signup .label {
+    width: 30%;
+    text-align: left;
 }
