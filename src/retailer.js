@@ -10,7 +10,6 @@ const MediTrust = () => {
 
     const [name , setName] = useState('');
     const [id , setId] = useState('');
-    const [mrp , setMrp] = useState('');
     const [loc , setLoc] = useState('');
     const [date , setDate] = useState('');
 
@@ -29,6 +28,46 @@ const handleSubmit = async e => {
         const nm = await mt.methods.addRetailer(id, date, loc, name).send({ from: accounts[0], gas:'1000000'});
 
         console.log(nm)
+
+        fetch('http://localhost:3000/retailer/addRetail', {
+          method: 'POST',
+          // redirect: 'manual',
+          body: JSON.stringify({medid : id , name : name , loc : loc}),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+      })
+      .then((res) => res.json())
+      .then((data) => {
+
+        alert(data.sending);
+
+        alert(id)
+
+        if(data.sending === "Already added" || data.sending === "Added new retailer"){
+
+          alert("Added retailer");
+
+          fetch("http://localhost:3000/retailer/addAvail" , {
+
+            method : 'POST',
+            body: JSON.stringify({name : name , id : id}),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+
+          })
+          .then((res2) => res2.json())
+          .then((data2) => {
+              alert(data2.sending);
+          })
+
+
+        }
+
+
+      })
+
         alert('Purchase successful!')
     }
 
@@ -67,7 +106,7 @@ const handleSubmit = async e => {
         <form onSubmit={handleSubmit}>
 
             Medicine ID : 
-            <input type='text' onChange={handleId}></input>
+            <input type='number' onChange={handleId}></input>
 
             <br/>
 
@@ -110,5 +149,3 @@ function Retailer() {
 }
 
 export default Retailer;
-
-

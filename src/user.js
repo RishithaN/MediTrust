@@ -13,10 +13,12 @@ const User = () => {
     const [isMedi, setIsMedi] = useState(false);
     const [isDoc, setIsDoc] = useState(false);
 
+    const [isShow, setIsShow] = useState(false);
+
     const [docArray , updateDocArray] = useState([]);
 
     const [medid , setMedid] = useState('');
-
+    const [info,setInfo] = useState('');
 
 
 const handleSubmit = async e => {
@@ -33,7 +35,9 @@ const handleSubmit = async e => {
 
         const nm = await mt.methods.medInfo(medid).call();
 
-        alert(nm)
+        alert(nm);
+        setInfo(nm);
+        setIsShow(true);
 
 
     }
@@ -68,7 +72,7 @@ const handleSubmit = async e => {
         setIsPres(false);
         setIsMedi(false);
         setIsDoc(true);
-
+        setIsShow(false);
         getDoctors();
 
     }
@@ -123,7 +127,6 @@ const handleSubmit = async e => {
 
 
         {isMedi && (
-
         <div>
 
             {/* Medicine info */}
@@ -145,16 +148,19 @@ const handleSubmit = async e => {
 
 
         </form>
-        
+         {isShow && (
+            <div>
+                <p>{info}</p>
+            </div>
+            )}
+
       </div>
 
-
-
+           
 
         </div>
-
+        
         )}
-
 
         {isDoc && (
 
