@@ -40,9 +40,9 @@ const handleSubmit = async e => {
       .then((res) => res.json())
       .then((data) => {
 
-        alert(data.sending);
+        //alert(data.sending);
 
-        alert(id)
+        //alert(id)
 
         if(data.sending === "Already added" || data.sending === "Added new retailer"){
 
@@ -59,7 +59,7 @@ const handleSubmit = async e => {
           })
           .then((res2) => res2.json())
           .then((data2) => {
-              alert(data2.sending);
+              //alert(data2.sending);
           })
 
 

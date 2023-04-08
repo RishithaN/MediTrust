@@ -31,8 +31,8 @@ function Signup() {
       .then((data) => {
 
 
-        alert(data.sending)
-        alert(data.role)
+        //alert(data.sending)
+        //alert(data.role)
 
       if(data.sending === "success" && data.role === 3){
         navigate('/user')

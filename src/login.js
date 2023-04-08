@@ -19,7 +19,7 @@ function Login() {
       event.preventDefault();
       // handle login
 
-      alert(password);
+      //alert(password);
 
       fetch('http://localhost:3000/login', {
             method: 'POST',
