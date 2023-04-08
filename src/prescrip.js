@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Tesseract from 'tesseract.js';
 import './prescrip.css'
-
-
+import Map from './map';
 function Prescrip() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [recognizedText, setRecognizedText] = useState('');
@@ -40,7 +39,10 @@ function Prescrip() {
     setIsShowPharm(true);
   }
 
+
+
   return (
+    
     <div className='wrapper'>
       <h1>Find your medicines</h1>
       <div className='piccon'>
@@ -61,6 +63,7 @@ function Prescrip() {
       {
         isShowPharm && (
             <div>
+                <Map></Map>
                 <table>
                     <tr>
                         <th>Pharmacy</th>
@@ -79,6 +82,9 @@ function Prescrip() {
                         <th>600078</th>
                     </tr>
                 </table>
+                <>
+                
+                </>
             </div>
         )
       }

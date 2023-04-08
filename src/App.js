@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Retailer from './retailer';
 import Manufacturer from './manufacturer';
 import Navbar from './navbar';
+import Map from './map';
 
 function App() {
 
@@ -22,8 +23,8 @@ function App() {
           <Route path="/retailer" element={<Retailer />} />
           <Route path="/manufacturer" element={<Manufacturer />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/" element={<Home />}>
-        </Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/map" element={<Map />} />
       </Routes>
     </BrowserRouter>
   );
