@@ -5,6 +5,7 @@ import { TODO_LIST_ABI, TODO_LIST_ADDRESS } from './config';
 
 
 import Prescrip from "./prescrip";
+import './user.css'
 
 
 const User = () => {
@@ -19,6 +20,7 @@ const User = () => {
 
     const [medid , setMedid] = useState('');
     const [info,setInfo] = useState('');
+    const [arr,setArr] = useState([]);
 
 
 const handleSubmit = async e => {
@@ -34,8 +36,10 @@ const handleSubmit = async e => {
         //const nm = await mt.methods.newMed(name , mrp , exp , date).send({ from: accounts[0], gas:'1000000'})
 
         const nm = await mt.methods.medInfo(medid).call();
-
-        alert(nm);
+        const array = nm.split('\n');
+        const arr = array.filter(function(entry) { return entry.trim() != ''; });
+        console.log(arr);
+        setArr(arr);
         setInfo(nm);
         setIsShow(true);
 
@@ -148,15 +152,36 @@ const handleSubmit = async e => {
 
 
         </form>
-         {isShow && (
-            <div>
-                <p>{info}</p>
-            </div>
-            )}
 
       </div>
 
-           
+           {isShow && (
+            <>
+            <h1 className='heading' style="text-align:center">TRACK MEDICINE</h1>
+            <div className="timeline">
+                <ul>
+                    <li>
+                        <div className="content">
+                        <h2>
+                            <time>Manufacturer name: {arr[2]}</time>
+                        </h2>
+                        <p>Manufactured Date: {arr[3]}</p>
+                        <p>Expiry Date: {arr[4]}</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="content">
+                        <h2>
+                            <time>Retailer name: {arr[5]}</time>
+                        </h2>
+                        <p>Purchase Date: {arr[6]}</p>
+                        <p>Location: {arr[7]}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            </>
+            )}
 
         </div>
         
