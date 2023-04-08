@@ -1,9 +1,28 @@
-import React from 'react'
+import React from 'react';
+
+import './home.css'
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+ 
+    <div class="title">	
+      {/* <div class="from-right">MEDITRUST,</div>
+      <div class="from-bottom">Healthy <span class="love">and</span> Natural</div> */}
+
+      <h1 className='title1'>MediTrust</h1>
+      <div className="divider"></div>
+      <h2 className='title2'>Delivering the best care</h2>
+
+      <br/>
+
+      
+
+  </div>
+
+
+
+)
+  
 }
 
 export default Home

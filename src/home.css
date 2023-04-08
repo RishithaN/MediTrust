@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condenseds');
+@import url('https://fonts.googleapis.com/css?family=Damion');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
+
+
+
+
+.title1 {
+    font-family: 'Cinzel', serif;
+    font-size: 150px;
+    text-align: center;
+    margin-top: 90px;
+    opacity: 0;
+    animation: fade 2s ease-in, up 1s ease-in;
+    animation-fill-mode: forwards;
+}
+
+.divider {
+    width: 0px;
+    height: 2px;
+    background: white;
+    margin: -30px auto 0;
+    opacity: 0;
+    animation: fade 1s 0.75s linear, stretch 1s 0.4s linear;
+    animation-fill-mode: forwards;
+}
+
+.title2 {
+    font-size: 4em;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    text-align: center;
+    margin-top: 15px;
+    opacity: 0;
+    animation: fade 2s 1.5s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes up {
+    0% {
+        margin-top: 90px;
+    }
+
+    60% {
+        margin-top: 30px;
+    }
+
+    70% {
+        margin-top: 25px;
+    }
+
+    80% {
+        margin-top: 30px;
+    }
+
+    90% {
+        margin-top: 25px;
+    }
+
+    100% {
+        margin-top: 30px;
+    }
+}
+
+@keyframes stretch {
+    from {
+        width: 0px;
+    }
+
+    to {
+        width: 530px;
+    }
+}
