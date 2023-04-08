@@ -1,0 +1,39 @@
+.wrapper {
+    background-color: #ffffff34;
+    width: 50%;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 80px;
+    padding: 30px 20px;
+}
+
+.wrapper2 {
+    background-color: #ffffff34;
+    width: 50%;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 30px 20px;
+    text-align: center;
+}
+.wrapper2 h2{
+    margin-top: 0;
+}
+
+.formgroup {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.input {
+    padding: 8px;
+    margin-left: 5px;
+}
+
+.button {
+    width: 15rem;
+    max-width: 15rem;
+    background-color: blueviolet ;
+    color: white;
+    margin-bottom: 15px;
+}

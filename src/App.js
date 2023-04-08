@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import Prescrip from './prescrip';
+import Home from './home';
+import Login from './Login';
+import Signup from './signup';
+import User from './user';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Retailer from './retailer';
+import Manufacturer from './manufacturer';
+import Navbar from './navbar';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+  return(
+    <BrowserRouter>
+      <Navbar></Navbar>
+      <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/prescrip" element={<Prescrip />} />
+          <Route path="/user" element={<User />} />
+          <Route path="/retailer" element={<Retailer />} />
+          <Route path="/manufacturer" element={<Manufacturer />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />}>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
+
+
+  
 }
 
 export default App;

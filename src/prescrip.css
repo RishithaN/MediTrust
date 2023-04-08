@@ -1,0 +1,50 @@
+.wrapper {
+    text-align: center;
+}
+
+.piccon {
+    background-color: #ffffff34;
+    width: 50%;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 30px 20px;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.piccon input[type="file"] {
+    font-size: 1.1rem;
+    margin: auto;
+    margin-bottom: 30px;
+    text-align: center;
+    display: block;
+}
+button {
+    font-size: 1.2rem;
+    padding: 8px 20px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(1, 23, 50, 0.929);
+    color: white;
+    font-weight: bold;
+}
+
+.medbox {
+    background-color: #ffffff34;
+    width: 40%;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 5px;
+}
+
+table {
+    border: 1px solid white;
+}
